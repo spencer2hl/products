@@ -1,6 +1,7 @@
 import os # operating system
+#读取档案
 products = []
-if os.path.isfile('products.txt'):
+if os.path.isfile('products.txt'): #检查文件在不在
 	print('yeah!找到档案了')
 	with open('products.txt', 'r', encoding='utf-8') as f:
 		for line in f:
