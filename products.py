@@ -1,12 +1,16 @@
-# 读取档案
+import os # operating system
 products = []
-with open('products.txt', 'r', encoding='utf-8') as f:
-	for line in f:
-		if '商品, 价格' in line:
-			continue		
-		name, price = line.strip().split(',')
-		products.append([name, price])
-print(products) 
+if os.path.isfile('products.txt'):
+	print('yeah!找到档案了')
+	with open('products.txt', 'r', encoding='utf-8') as f:
+		for line in f:
+			if '商品, 价格' in line:
+				continue		
+			name, price = line.strip().split(',')
+			products.append([name, price])
+	print(products) 
+else:
+	pring('找不到档案......')
 
 #让使用者输入
 while True:
